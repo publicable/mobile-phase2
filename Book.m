@@ -29,4 +29,9 @@
     return self;
 }
 
+- (NSString *)description
+{
+    return [[NSString alloc] initWithFormat:@"%@, %@", _title, _author];
+}
+
 @end

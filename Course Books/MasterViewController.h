@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AddBookViewController.h"
+#import "SimpleBookManager.h"
 
-@interface MasterViewController : UITableViewController
+@interface MasterViewController : UITableViewController <AddBookViewControllerDelegate>
+
+@property (strong, nonatomic) SimpleBookManager* bookManager;
 
 @end

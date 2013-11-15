@@ -31,7 +31,11 @@
     // Update the user interface for the detail item.
 
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
+        self.titleLabel.text = [_detailItem title];
+        self.authorLabel.text = [_detailItem author];
+        self.priceLabel.text = [[NSString alloc] initWithFormat:@"%lu",(unsigned long)[_detailItem price] ];
+        self.courseLabel.text = [_detailItem course];
+        self.isbnLabel.text = [_detailItem isbn];
     }
 }
 

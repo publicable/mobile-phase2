@@ -27,11 +27,6 @@
     }
     
     bookArray = [NSMutableArray array];
-    
-    int i;
-    for (i = 1; i <=5; i++) {
-        [self createBook];
-    }
 
     return self;
 }
@@ -44,14 +39,8 @@
     return string;
 }
 
-- (Book *)createBook
+- (Book *)createBookWithTitle:(NSString *)title author:(NSString *)author price:(NSUInteger)price course:(NSString *)course isbn:(NSString *)isbn
 {
-    NSUInteger price = arc4random() % 100;
-    NSString *author = [SimpleBookManager generateRandomString:6];
-    NSString *title = [SimpleBookManager generateRandomString:6];
-    NSString *isbn = [SimpleBookManager generateRandomString:6];
-    NSString *course = [SimpleBookManager generateRandomString:6];
-    
     Book *book = [[Book alloc]
             initWithAuthor:author
             :title
@@ -69,6 +58,7 @@
 - (void)removeBook:(Book *)b
 {
     [bookArray removeObject:b];
+    NSLog(@"%@ removed.", b);
 }
 
 - (Book *)bookAtIndex:(NSUInteger)index

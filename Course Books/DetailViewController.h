@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Book.h"
 
 @interface DetailViewController : UIViewController
 
 @property (strong, nonatomic) id detailItem;
-
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *authorLabel;
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *courseLabel;
+@property (weak, nonatomic) IBOutlet UILabel *isbnLabel;
 @end

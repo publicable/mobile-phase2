@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BB2240D183653EA00759248 /* AddBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB2240C183653EA00759248 /* AddBookViewController.m */; };
 		0BB818DC18364B7800C4F17B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BB818DB18364B7800C4F17B /* Foundation.framework */; };
 		0BB818DE18364B7800C4F17B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BB818DD18364B7800C4F17B /* CoreGraphics.framework */; };
 		0BB818E018364B7800C4F17B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BB818DF18364B7800C4F17B /* UIKit.framework */; };
@@ -24,6 +25,7 @@
 		0BB8190A18364B7900C4F17B /* Course_BooksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB8190918364B7900C4F17B /* Course_BooksTests.m */; };
 		0BB8191818364CD900C4F17B /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB8191418364CD900C4F17B /* Book.m */; };
 		0BB8191918364CD900C4F17B /* SimpleBookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB8191718364CD900C4F17B /* SimpleBookManager.m */; };
+		0BF37ED11836701B007D68A9 /* EditBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF37ED01836701B007D68A9 /* EditBookViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0BB2240B183653EA00759248 /* AddBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddBookViewController.h; path = ../AddBookViewController.h; sourceTree = "<group>"; };
+		0BB2240C183653EA00759248 /* AddBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddBookViewController.m; path = ../AddBookViewController.m; sourceTree = "<group>"; };
 		0BB818D818364B7800C4F17B /* Course Books.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Course Books.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BB818DB18364B7800C4F17B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0BB818DD18364B7800C4F17B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -63,6 +67,8 @@
 		0BB8191518364CD900C4F17B /* BookManagerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookManagerProtocol.h; sourceTree = "<group>"; };
 		0BB8191618364CD900C4F17B /* SimpleBookManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleBookManager.h; sourceTree = "<group>"; };
 		0BB8191718364CD900C4F17B /* SimpleBookManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleBookManager.m; sourceTree = "<group>"; };
+		0BF37ECF1836701B007D68A9 /* EditBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditBookViewController.h; sourceTree = "<group>"; };
+		0BF37ED01836701B007D68A9 /* EditBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditBookViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +133,8 @@
 		0BB818E118364B7800C4F17B /* Course Books */ = {
 			isa = PBXGroup;
 			children = (
+				0BB2240B183653EA00759248 /* AddBookViewController.h */,
+				0BB2240C183653EA00759248 /* AddBookViewController.m */,
 				0BB818EA18364B7900C4F17B /* AppDelegate.h */,
 				0BB818EB18364B7900C4F17B /* AppDelegate.m */,
 				0BB818ED18364B7900C4F17B /* Main.storyboard */,
@@ -134,6 +142,8 @@
 				0BB818F118364B7900C4F17B /* MasterViewController.m */,
 				0BB818F318364B7900C4F17B /* DetailViewController.h */,
 				0BB818F418364B7900C4F17B /* DetailViewController.m */,
+				0BF37ECF1836701B007D68A9 /* EditBookViewController.h */,
+				0BF37ED01836701B007D68A9 /* EditBookViewController.m */,
 				0BB818F618364B7900C4F17B /* Images.xcassets */,
 				0BB818E218364B7800C4F17B /* Supporting Files */,
 			);
@@ -269,8 +279,10 @@
 				0BB8191818364CD900C4F17B /* Book.m in Sources */,
 				0BB818EC18364B7900C4F17B /* AppDelegate.m in Sources */,
 				0BB818F218364B7900C4F17B /* MasterViewController.m in Sources */,
+				0BF37ED11836701B007D68A9 /* EditBookViewController.m in Sources */,
 				0BB818E818364B7900C4F17B /* main.m in Sources */,
 				0BB8191918364CD900C4F17B /* SimpleBookManager.m in Sources */,
+				0BB2240D183653EA00759248 /* AddBookViewController.m in Sources */,
 				0BB818F518364B7900C4F17B /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,6 +492,7 @@
 				0BB8190F18364B7900C4F17B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0BB8191018364B7900C4F17B /* Build configuration list for PBXNativeTarget "Course BooksTests" */ = {
 			isa = XCConfigurationList;
@@ -488,6 +501,7 @@
 				0BB8191218364B7900C4F17B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

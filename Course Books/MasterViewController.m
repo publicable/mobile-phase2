@@ -10,6 +10,8 @@
 
 #import "DetailViewController.h"
 
+#import "SimpleBookManager.h"
+
 @interface MasterViewController () {
     NSMutableArray *_objects;
 }
@@ -27,9 +29,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
+    
+    _bookManager = [[SimpleBookManager alloc] init];
+    _objects = [[NSMutableArray alloc] initWithArray: [_bookManager allBooks]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,12 +40,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)insertNewObject:(id)sender
+- (void)insertNewObject:(Book *)book
 {
     if (!_objects) {
         _objects = [[NSMutableArray alloc] init];
     }
-    [_objects insertObject:[NSDate date] atIndex:0];
+    [_objects insertObject:book atIndex:0];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
@@ -78,6 +80,8 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+        Book *book = [_objects objectAtIndex:indexPath.row];
+        [_bookManager removeBook:book];
         [_objects removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
@@ -108,6 +112,26 @@
         NSDate *object = _objects[indexPath.row];
         [[segue destinationViewController] setDetailItem:object];
     }
+    
+    if ([segue.identifier isEqualToString:@"addBookSegue"]) {
+        UINavigationController *navigationController = segue.destinationViewController;
+        AddBookViewController *addBookViewController = [navigationController viewControllers][0];
+        addBookViewController.delegate = self;
+    }
+}
+
+#pragma mark - AddBookViewControllerDelegate
+
+- (void)addBookViewControllerDidCancel:(AddBookViewController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)addBookViewControllerDidSave:(AddBookViewController *)controller withTitle:(NSString *)title author:(NSString *)author price:(NSUInteger)price course:(NSString *)course isbn:(NSString *)isbn
+{
+    Book* newBook = [_bookManager createBookWithTitle:title author:author price:price course:course isbn:isbn];
+    [self insertNewObject:newBook];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

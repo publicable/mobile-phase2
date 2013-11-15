@@ -12,7 +12,12 @@
 @protocol BookManager <NSObject>
 - (NSUInteger)count;
 - (Book *)bookAtIndex:(NSUInteger)index;
-- (Book *)createBook;
+- (Book *)createBookWithTitle:(NSString *)title
+                       author:(NSString*)author
+                        price:(NSUInteger)price
+                       course:(NSString *)course
+                         isbn:(NSString *)isbn;
+
 - (NSArray *)allBooks;
 - (void)removeBook:(Book *)b;
 - (void)moveBookAtIndex:(NSUInteger)from toIndex:(NSUInteger)to;
