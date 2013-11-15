@@ -11,11 +11,29 @@
 
 @interface SimpleBookManager ()
 @property NSMutableArray* bookArray;
+@property NSString *archivePath;
 @end
 
 @implementation SimpleBookManager
 
 @synthesize bookArray;
+
+static SimpleBookManager *singletonInstance;
+
++ (void)initialize
+{
+    static BOOL initialized = NO;
+    if( ! initialized)
+    {
+        initialized = YES;
+        singletonInstance = [[SimpleBookManager alloc] init];
+    }
+}
+
++ (SimpleBookManager *)sharedBookManager
+{
+    return singletonInstance;
+}
 
 - (id)init
 {
@@ -26,7 +44,11 @@
         return nil;
     }
     
+    NSString *documentPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    _archivePath = [documentPath stringByAppendingPathComponent:@"books"];
+    
     bookArray = [NSMutableArray array];
+    [self loadBooks];
 
     return self;
 }
@@ -51,13 +73,26 @@
     
     NSLog(@"Book created: %@, %d", title, price);
     [bookArray addObject: book];
+    [self saveChanges];
     
     return book;
+}
+
+- (void)editBook:(Book *)book title:(NSString *)title author:(NSString *)author price:(NSUInteger)price course:(NSString *)course isbn:(NSString *)isbn
+{
+    book.title = title;
+    book.author = author;
+    book.price = price;
+    book.course = course;
+    book.isbn = isbn;
+    
+    [self saveChanges];
 }
 
 - (void)removeBook:(Book *)b
 {
     [bookArray removeObject:b];
+    [self saveChanges];
     NSLog(@"%@ removed.", b);
 }
 
@@ -135,7 +170,12 @@
 
 - (void)saveChanges
 {
-    
+    [NSKeyedArchiver archiveRootObject:bookArray toFile:_archivePath];
+}
+
+- (void)loadBooks
+{
+    bookArray = [[NSMutableArray alloc] initWithArray:[NSKeyedUnarchiver unarchiveObjectWithFile:_archivePath]];
 }
 
 @end

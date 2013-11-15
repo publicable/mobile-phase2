@@ -21,6 +21,7 @@
 @end
 
 @interface AddBookViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
 
 @property (nonatomic, weak) id <AddBookViewControllerDelegate> delegate;
 
@@ -33,5 +34,6 @@
 
 - (IBAction)cancel:(id)sender;
 - (IBAction)done:(id)sender;
+- (IBAction)titleChange:(id)sender;
 
 @end

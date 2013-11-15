@@ -81,35 +81,35 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8U7-e7-4gI" userLabel="titleLabel">
-                                <rect key="frame" x="20" y="97" width="117" height="21"/>
+                                <rect key="frame" x="20" y="96" width="117" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kp8-JN-JRn" userLabel="authorLabel">
-                                <rect key="frame" x="20" y="163" width="117" height="21"/>
+                                <rect key="frame" x="20" y="132" width="117" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Course" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4NH-pD-axt" userLabel="courseLabel">
-                                <rect key="frame" x="20" y="196" width="117" height="21"/>
+                                <rect key="frame" x="20" y="202" width="117" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ISBN" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dz9-WV-p0w" userLabel="isbnLabel">
-                                <rect key="frame" x="20" y="230" width="117" height="21"/>
+                                <rect key="frame" x="20" y="237" width="117" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7R-xi-cy3" userLabel="priceLabel">
-                                <rect key="frame" x="20" y="130" width="117" height="21"/>
+                                <rect key="frame" x="20" y="167" width="117" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -120,27 +120,30 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="titleChange:" destination="ejs-np-NUV" eventType="editingChanged" id="RKQ-31-DaF"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="exK-fl-DBw" userLabel="priceTextField">
-                                <rect key="frame" x="145" y="126" width="155" height="30"/>
+                                <rect key="frame" x="145" y="164" width="155" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IS4-CS-DLi" userLabel="authorTextField">
-                                <rect key="frame" x="145" y="159" width="155" height="30"/>
+                                <rect key="frame" x="145" y="129" width="155" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3cS-cz-bbg" userLabel="courseTextField">
-                                <rect key="frame" x="145" y="192" width="155" height="30"/>
+                                <rect key="frame" x="145" y="199" width="155" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IrB-Px-Sv0" userLabel="isbnTextField">
-                                <rect key="frame" x="145" y="226" width="155" height="30"/>
+                                <rect key="frame" x="145" y="234" width="155" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -163,6 +166,7 @@
                     <connections>
                         <outlet property="authorInput" destination="IS4-CS-DLi" id="KVM-RP-73n"/>
                         <outlet property="courseInput" destination="3cS-cz-bbg" id="2wF-sf-Njy"/>
+                        <outlet property="doneButton" destination="3Qr-Z6-9hC" id="SS7-Ce-GrQ"/>
                         <outlet property="isbnInput" destination="IrB-Px-Sv0" id="kc4-Cv-9nn"/>
                         <outlet property="priceInput" destination="exK-fl-DBw" id="3KA-51-zWn"/>
                         <outlet property="titleInput" destination="T0Z-FS-EbX" id="fJW-KU-bfn"/>
@@ -221,7 +225,7 @@
                     <navigationItem key="navigationItem" id="cra-N8-TIN">
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="DAW-NF-IJd">
                             <connections>
-                                <segue destination="FNr-ri-YYf" kind="modal" id="xNW-X4-neI"/>
+                                <segue destination="FNr-ri-YYf" kind="modal" identifier="editBookSegue" id="xNW-X4-neI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -289,6 +293,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="titleChange:" destination="TXI-wK-mTI" eventType="editingChanged" id="U5E-MN-8yw"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="foN-6h-zyj" userLabel="priceTextField">
                                 <rect key="frame" x="145" y="166" width="155" height="30"/>
@@ -317,7 +324,26 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="XiK-U4-Bql"/>
+                    <navigationItem key="navigationItem" title="Edit Book" id="XiK-U4-Bql">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="bch-V6-pO9">
+                            <connections>
+                                <action selector="cancel:" destination="TXI-wK-mTI" id="3uZ-Vc-zwE"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="z3j-Xi-OHV">
+                            <connections>
+                                <action selector="done:" destination="TXI-wK-mTI" id="fHz-0J-L5q"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="authorInput" destination="5gD-Nl-TZE" id="JAN-6x-DEc"/>
+                        <outlet property="courseInput" destination="QB1-NP-9gB" id="zcO-ji-n5C"/>
+                        <outlet property="doneButton" destination="z3j-Xi-OHV" id="ebp-qb-2G5"/>
+                        <outlet property="isbnInput" destination="pNX-3k-hE0" id="fch-cY-Ha1"/>
+                        <outlet property="priceInput" destination="foN-6h-zyj" id="iKV-7O-B1n"/>
+                        <outlet property="titleInput" destination="ldf-aK-f1f" id="eLP-0H-yuj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FZH-0j-YEB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

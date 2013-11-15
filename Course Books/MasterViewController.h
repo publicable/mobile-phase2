@@ -8,10 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "AddBookViewController.h"
+#import "EditBookViewController.h"
 #import "SimpleBookManager.h"
 
-@interface MasterViewController : UITableViewController <AddBookViewControllerDelegate>
-
-@property (strong, nonatomic) SimpleBookManager* bookManager;
+@interface MasterViewController : UITableViewController <AddBookViewControllerDelegate, EditBookViewControllerDelegate>
 
 @end

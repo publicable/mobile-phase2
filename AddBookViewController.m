@@ -27,6 +27,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    _doneButton.enabled = NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,6 +51,15 @@
     NSString *isbn = _isbnInput.text;
     
     [self.delegate addBookViewControllerDidSave:self withTitle:title author:author price:price course:course isbn:isbn];
+}
+
+- (IBAction)titleChange:(id)sender {
+    if (_titleInput.text.length > 0)
+    {
+        _doneButton.enabled = YES;
+    } else {
+        _doneButton.enabled = NO;
+    }
 }
 
 @end

@@ -7,9 +7,7 @@
 //
 
 #import "MasterViewController.h"
-
 #import "DetailViewController.h"
-
 #import "SimpleBookManager.h"
 
 @interface MasterViewController () {
@@ -30,8 +28,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
-    _bookManager = [[SimpleBookManager alloc] init];
-    _objects = [[NSMutableArray alloc] initWithArray: [_bookManager allBooks]];
+    _objects = [[NSMutableArray alloc] initWithArray: [[SimpleBookManager sharedBookManager] allBooks]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -81,7 +78,7 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         Book *book = [_objects objectAtIndex:indexPath.row];
-        [_bookManager removeBook:book];
+        [[SimpleBookManager sharedBookManager] removeBook:book];
         [_objects removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
@@ -129,8 +126,22 @@
 
 - (void)addBookViewControllerDidSave:(AddBookViewController *)controller withTitle:(NSString *)title author:(NSString *)author price:(NSUInteger)price course:(NSString *)course isbn:(NSString *)isbn
 {
-    Book* newBook = [_bookManager createBookWithTitle:title author:author price:price course:course isbn:isbn];
+    Book* newBook = [[SimpleBookManager sharedBookManager] createBookWithTitle:title author:author price:price course:course isbn:isbn];
     [self insertNewObject:newBook];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - EditBookViewControllerDelegate
+
+- (void)editBookViewControllerDidCancel:(EditBookViewController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)editBookViewControllerDidSave:(EditBookViewController *)controller book:(Book*)book withTitle:(NSString *)title author:(NSString *)author price:(NSUInteger)price course:(NSString *)course isbn:(NSString *)isbn
+{
+    [[SimpleBookManager sharedBookManager] editBook:book title:title author:author price:price course:course isbn:isbn];
+    [self.tableView reloadData];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
