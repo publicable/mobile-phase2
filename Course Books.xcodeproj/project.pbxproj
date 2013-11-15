@@ -22,6 +22,8 @@
 		0BB8190018364B7900C4F17B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BB818DF18364B7800C4F17B /* UIKit.framework */; };
 		0BB8190818364B7900C4F17B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0BB8190618364B7900C4F17B /* InfoPlist.strings */; };
 		0BB8190A18364B7900C4F17B /* Course_BooksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB8190918364B7900C4F17B /* Course_BooksTests.m */; };
+		0BB8191818364CD900C4F17B /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB8191418364CD900C4F17B /* Book.m */; };
+		0BB8191918364CD900C4F17B /* SimpleBookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB8191718364CD900C4F17B /* SimpleBookManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,11 @@
 		0BB8190518364B7900C4F17B /* Course BooksTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Course BooksTests-Info.plist"; sourceTree = "<group>"; };
 		0BB8190718364B7900C4F17B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0BB8190918364B7900C4F17B /* Course_BooksTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Course_BooksTests.m; sourceTree = "<group>"; };
+		0BB8191318364CD900C4F17B /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
+		0BB8191418364CD900C4F17B /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
+		0BB8191518364CD900C4F17B /* BookManagerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookManagerProtocol.h; sourceTree = "<group>"; };
+		0BB8191618364CD900C4F17B /* SimpleBookManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleBookManager.h; sourceTree = "<group>"; };
+		0BB8191718364CD900C4F17B /* SimpleBookManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleBookManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +92,11 @@
 		0BB818CF18364B7800C4F17B = {
 			isa = PBXGroup;
 			children = (
+				0BB8191318364CD900C4F17B /* Book.h */,
+				0BB8191418364CD900C4F17B /* Book.m */,
+				0BB8191518364CD900C4F17B /* BookManagerProtocol.h */,
+				0BB8191618364CD900C4F17B /* SimpleBookManager.h */,
+				0BB8191718364CD900C4F17B /* SimpleBookManager.m */,
 				0BB818E118364B7800C4F17B /* Course Books */,
 				0BB8190318364B7900C4F17B /* Course BooksTests */,
 				0BB818DA18364B7800C4F17B /* Frameworks */,
@@ -254,9 +266,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BB8191818364CD900C4F17B /* Book.m in Sources */,
 				0BB818EC18364B7900C4F17B /* AppDelegate.m in Sources */,
 				0BB818F218364B7900C4F17B /* MasterViewController.m in Sources */,
 				0BB818E818364B7900C4F17B /* main.m in Sources */,
+				0BB8191918364CD900C4F17B /* SimpleBookManager.m in Sources */,
 				0BB818F518364B7900C4F17B /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
